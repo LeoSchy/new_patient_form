@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+    }
+    body {
+    text-align: center;
+    font-family: 'Slabo 27px', serif;
+    }
+    .descripcion {
+    display: inline-block;
+    font-family: 'Slabo 27px', serif;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 1em;
+    max-width: 768px;
+    vertical-align: middle;
+    }
+    h1 {
+    font-size: 2em;
+    }
+    h2 {
+    font-size: 1.5em;
+    }
+    .container {
+    /* Form Styling */
+    border-radius: 5px;
+    padding: 1vw;
+    margin: auto;
+    background: #aeeaae;
+    width: 75%;
+    max-width: 1024px;
+    }
+    .sombra {
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    }
+    .subtitulo {
+    font-family: 'Slabo 27px', serif;
+    text-align: center;
+    grid-area: header;
+    }
+    .etiqueta {
+    font-family: 'Slabo 27px', serif;
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+    width: 35%;
+    padding: 5px;
+    margin-top: 8px;
+    }
+    .dato {
+    display: inline-block;
+    text-align: left;
+    margin: 10px;
+    vertical-align: middle;
+    padding: 5px;
+    height: 20px;
+    width: 46%;
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+    }
+    .datoBox {
+    display: inline-block;
+    text-align: left;
+    margin: 5px;
+    vertical-align: middle;
+    padding: 5px;
+    width: 46%;
+    }
+    input:invalid {
+    border: 1px dashed #808080;
+    }
+    .dropdown {
+    display: inline-block;
+    text-align: left;
+    margin: 10px;
+    vertical-align: middle;
+    padding: 5px;
+    height: 33px;
+    width: 47%;
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+    }
+    .radio {
+    position: relative;
+    margin-left: 10px;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-align: left;
+    }
+    .comentarios {
+    display: inline-block;
+    width: 46%;
+    height: 150px;
+    text-align: left;
+    font-size: auto;
+    margin: 8px;
+    resize: vertical;
+    }
+    .btn {
+    color: #808080;
+    background: white;
+    border: 2px solid #808080;
+    border-radius: 6px;
+    padding: 12px 26px;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    }
+    .btn:hover {
+    background-color: #808080;
+    color: white;
+    }
+    font-family: 'Slabo 27px', serif;
+    font-size: 1em;
+    width: auto;
+    text-aling: center;
+    margin: 2% auto 2% auto;
+    }
+    /* This is not being applied for some reason */
+    .creditos {
+    font-size: 5vw;
+    }
+    /* Media query for small screens */
+    /*@media screen and (min-width: 1024px) {
+    .dato {
+    width: 380px;
+    }
+    .dropdown {
+    width: 390px;
+    }
+    }*/
+    /* Box and shadows styling */
+    .box{
+    width:60%;
+    background-color:white; 
+    margin:15px 15px;
+    border-radius:5px;
+    padding: 10px;
+    }
+    .box5{
+    background-color: #9ED9EB;
+    position:relative;
+    }
+    .shadow5 {
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    }
+    .shadow5:before, .shadow5:after{
+    position:absolute;
+    content:"";
+    box-shadow:0 10px 25px 20px #518C96;
+    top:40px;left:10px;bottom:50px;
+    width:15%;
+    z-index:-1;
+    -webkit-transform: rotate(-8deg);
+    -moz-transform: rotate(-8deg);
+    transform: rotate(-8deg);
+    }
+    .shadow5:after{
+    -webkit-transform: rotate(8deg);
+    -moz-transform: rotate(8deg);
+    transform: rotate(8deg);
+    right: 10px;left: auto;
+    }
+  </style>
+  <h1 id="title">Formulario para pacientes nuevos</h1>
+  <hr>
+  <p class="descripcion box box5 shadow5" id="description"><b>El formulario está separado en "Información Básica" e "Información Complementaria".
+    Sólo es requisito que completes tus datos básicos. Los complementarios son opcionales.</b>
+  </p>
+  <form id="survey-form" class="container sombra" action="" method="get">
+    <h2 class="subtitulo">Información básica</h2>
+    <label for="name" class="etiqueta" id="name-label">Nombre:</label>
+    <input type="text" class="dato" id="name" placeholder="Tu Nombre" name="name" required>
+    <label for="lastname" class="etiqueta" id="lastname-label">Apellido:</label>
+    <input type="text" class="dato" id="lastname" placeholder="Tu Apellido" name="lastname" required>
+    <label for="phone" class="etiqueta" id="phone-label">Número de teléfono:</label>
+    <input type="number" class="dato" id="phone" name="phone" placeholder="Por favor ingresá el código de área sin el cero. Ejemplo: 3436123456" required>
+    <label for="email" class="etiqueta" id="email-label">Dirección de correo electrónico:</label>
+    <input type="email" class="dato" id="email" name="email" placeholder="e-mail@ejemplo.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+    <h2 class="subtitulo">Información complementaria</h2>
+    <label for="number" class="etiqueta" id="number-label">Edad:</label>
+    <input type="number" class="dato" id="number" name="age" placeholder="Tu Edad" min="5" max="105">
+    <label for="dni" class="etiqueta" id="dni-label">DNI:</label>
+    <input type="number" class="dato" id="dni" name="dni" placeholder="Por favor ingresá tu DNI sin puntos" value="">
+    <label for="occupation" class="etiqueta" id="occupation-label">Ocupación:</label>
+    <input type="text" class="dato" id="occupation" name="occupation" placeholder="Tu ocupación">
+    <label for="obrasoc" class="etiqueta" id="obrasoc-label">Obra Social:</label>
+    <input type="text" class="dato" id="obrasoc" name="obrasoc" placeholder="Ejemplo: IOSPER">
+    <label for="motivo" class="etiqueta" id="dropdown-label">Motivo de la consulta:</label>
+    <select class="dropdown" id="dropdown" name="motivo">
+      <option disabled selected>Elegí la opción que mejor describa el motivo de tu consulta</option>
+      <option value="Option1">Quiero bajar o subir de peso</option>
+      <option value="Option2">Tengo diabetes, problemas cardiovasculares o hipertensión arterial</option>
+      <option value="Option3">Tengo problemas digestivos</option>
+      <option value="Option4">Estoy embarazada</option>
+      <option value="Option5">Quiero mejorar mi rendimiento deportivo</option>
+      <option value="Option6">Quiero alimentarme más sano</option>
+      <option value="Option7">Otro</option>
+    </select>
+    <div class="etiqueta">¿Realizaste algún tratamiento anteriormente?</div>
+    <ul style="list-style: none;" class="datoBox">
+      <li class="">
+        <label for="radioSi" class="" id="radioSi-label">
+        <input type="radio" class="" id="radioSi" name="radioPrimeravez" value="primeravezNo">Sí
+        </label>
+      </li>
+      <li class="">
+        <label for="radioNo" class="" id="radioNo-label">
+        <input type="radio" class="" id="radioNo" name="radioPrimeravez" value="primeravezSi">No
+        </label>
+      </li>
+    </ul>
+    <div class="etiqueta">¿Qué esperás lograr con el tratamiento? Podés seleccionar más de una opción:</div>
+    <ul style="list-style: none;" class="datoBox">
+      <li class="">
+        <label for="expectativa1" class="" id="expectativa1-label">
+        <input type="checkbox" id="expectativa1" name="expectativas" value="1">Bajar de peso
+        </label>
+      </li>
+      <li class="">
+        <label for="expectativa2" class="" id="expectativa2-label">
+        <input type="checkbox" id="expectativa2" name="expectativas" value="2">Subir de peso
+        </label>      
+      </li>
+      <li class="">
+        <label for="expectativa3" class="" id="expectativa3-label">
+        <input type="checkbox" id="expectativa3" name="expectativas" value="3">Aprender estrategias para mejorar mis hábitos de alimentación
+        </label>
+      </li>
+      <li class="">
+        <label for="expectativa4" class="" id="expectativa4-label">
+        <input type="checkbox" id="expectativa4" name="expectativas" value="4">Quiero informarme porque deseo tener familia o estoy actualmente embarazada
+        </label>      
+      </li>
+      <li class="">
+        <label for="expectativa5" class="" id="expectativa5-label">
+        <input type="checkbox" id="expectativa5" name="expectativas" value="5">Otros objetivos
+        </label>      
+      </li>
+    </ul>
+    <label for="comentarios" class="etiqueta" id="comentarios-label">
+    Comentarios:
+    </label>
+    <textarea type="text" name="comentarios" class="comentarios" placeholder="Cualquier comentario adicional que desees hacer; o si elegiste 'Otros objetivos' en la pregunta anterior y querés detallar cuales son..."></textarea>
+    <br>
+    <button type="submit" id="submit" class="btn">Enviar</button>
+  </form>
+  <hr>
+  <p style="font-size: 12px;">Written and coded by <a href="https://www.linkedin.com/in/leonardoschymansky/" target="_blank">Leonardo Schymansky</a>.</p>
+  <html>
